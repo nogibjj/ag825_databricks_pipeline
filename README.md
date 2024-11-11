@@ -7,6 +7,7 @@ Duke University, Fall 2024 <br>
 ##
 
 ### About the project
+[![CI](https://github.com/nogibjj/ag825_pyspark_data_processing/actions/workflows/cicd.yml/badge.svg)](https://github.com/nogibjj/ag825_pyspark_data_processing/actions/workflows/cicd.yml)
 
 The aim with this project was to read a .csv file, read it into a database using PySpark and perform CRUD (Create, Read, Update, Delete) operations on the database. 
 
