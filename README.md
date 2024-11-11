@@ -1,37 +1,67 @@
-[![CI](https://github.com/nogibjj/python-ruff-template/actions/workflows/cicd.yml/badge.svg)](https://github.com/nogibjj/python-ruff-template/actions/workflows/cicd.yml)
-## Template for Python projects with RUFF linter
 
-![1 15_rust_built_python_tools](https://github.com/nogibjj/python-ruff-template/assets/58792/db5f7bda-a977-4c67-acbe-a70fe034fbdf)
+# Mini Project: PySpark Data Processing
+Adil Keku Gazder <br>
+ag825, adil.gazder@duke.edu <br>
+IDS 706: Data Engineering Systems <br>
+Duke University, Fall 2024 <br>
+##
 
+### About the project
 
+The aim with this project was to read a .csv file, read it into a database using PySpark and perform CRUD (Create, Read, Update, Delete) operations on the database. 
 
-1. First thing to do on launch is to open a new shell and verify virtualenv is sourced.
+The dataset used for this project was acquired from Kaggle (Cancer Data -> Cancer_Data.csv) and this dataset was modified to include only the following few columns:
+- id
+- diagnosis
+- radius_mean
+- texture_mean
+- perimeter_mean
+- area_mean
+- smoothness_mean
 
-Things included are:
-
-* `Makefile`
-
-* `Pytest`
-
-* `pandas`
-
-* `Ruff`:  
-
-Run `make lint` which runs `ruff check`.  You can find out more info on [Ruff here](https://github.com/astral-sh/ruff).
-
-* `Dockerfile`
-
-* `GitHub copilot`
-
-* `jupyter` and `ipython` 
-
-* A base set of libraries for devops and web
-
-* `githubactions`
-
-## References
-
-![1 1-function-essence-of-programming](https://github.com/nogibjj/python-ruff-template/assets/58792/f7f33cd3-cff5-4014-98ea-09b6a29c7557)
+Link to the dataset: (https://www.kaggle.com/datasets/erdemtaha/cancer-data/data?select=Cancer_Data.csv)
 
 
+##
+### Repository Structure
 
+
+```
+ag825_pyspark_data_processing/
+├── .devcontainer/
+│   ├── devcontainer.json
+│   └── Dockerfile
+├── .github/
+│   └── workflows/CICD.yml
+├── .gitignore
+├── Dockerfile
+├── main.py
+├── test_main.py
+├── requirements.txt
+├── repeat.sh
+├── setup.sh
+├── LICENSE
+├── Cancer_Data.csv
+├── README.md
+└── output.png
+```
+
+##
+### Output and Results
+
+The details about the CRUD operations performed have been detailed below:
+
+> [CREATE] create() in main.py
+    
+- Inserts a new record into the CancerDB.db file (creates a record with unique ID 123123123)
+
+>  [READ] read() in main.py
+- Reads the top 5 rows from CancerDB.db
+    
+>  [UPDATE] update() in main.py
+
+- Updates the value of the diagnosis feild for the record with unique ID: 123123123 in CancerDB.db
+
+> [DELETE] delete() in main.py
+
+- Deletes the record with unique ID: 123123123 in CancerDB.db
