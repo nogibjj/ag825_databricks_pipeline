@@ -1,5 +1,6 @@
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import when, col, lit
+# from databricks.sdk.runtime import spark
 
 SparkSession.builder.getOrCreate().stop()
 spark = SparkSession.builder.appName("CancerDB").getOrCreate()
