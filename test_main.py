@@ -1,30 +1,34 @@
-from main import extract, create, read, update, delete
-from pyspark.sql import SparkSession
+from query import create
+from query import read
+from query import update
+from query import delete
 
-# from pyspark.sql.functions import when, col, lit
+
+def test_create():
+    database = "CancerDB.db"
+    assert create(database) == "Success"
 
 
-def test_all():
-    url = "Cancer_Data.csv"
-    #    df = spark.read.csv(url, header=True, inferSchema=True)
-    op = extract(url)
+def test_read():
+    database = "CancerDB.db"
+    assert read(database) == "Success"
 
-    assert op.count()>0
 
-    op1=create(op)
-    assert op1.count()>0
-    
-    op1=read(op1)
-    assert op1.count()>0
-    
-    op1=update(op1)
-    assert op1.count()>0
-    
-    op1=delete(op1)
-    assert op1.count()>0
+def test_update():
+    database = "CancerDB.db"
+    assert update(database) == "Success"
+
+
+def test_delete():
+    database = "CancerDB.db"
+    assert delete(database) == "Success"
 
 
 if __name__ == "__main__":
-    SparkSession.builder.getOrCreate().stop()
-    spark = SparkSession.builder.appName("CancerDB").getOrCreate()
-    test_all()
+
+    database = "CancerDB.db"
+
+    test_create()
+    test_read()
+    test_update()
+    test_delete()
